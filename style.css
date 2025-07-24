@@ -1,0 +1,227 @@
+/* Reset */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  
+  :root {
+    --cor-primaria: #6c63ff;
+    --cor-secundaria: #1f1f2e;
+    --texto: #fff;
+    --texto-claro: #333;
+    --bg-claro: #f7f7f7;
+    --fonte: 'Poppins', sans-serif;
+  }
+  
+  body {
+    font-family: var(--fonte);
+    background: #101018;
+    color: var(--texto);
+    line-height: 1.6;
+    transition: background 0.4s, color 0.4s;
+  }
+  
+  
+  /* Cabeçalho animado */
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(-45deg, #6c63ff, #3a2fff, #8b6aff, #1f1f2e);
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+    color: white;
+  }
+  
+  @keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  
+  .foto-perfil {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 1rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    background: var(--cor-primaria);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  /* Botão neon */
+  .neon-btn {
+    position: relative;
+    overflow: hidden;
+  }
+  .neon-btn:hover {
+    box-shadow: 0 0 10px var(--cor-primaria), 0 0 40px var(--cor-primaria);
+  }
+  
+  /* Menu fixo */
+  nav {
+    position: sticky;
+    top: 0;
+    background: #151525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .menu li a:hover {
+    color: var(--cor-primaria);
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Conteúdo */
+  main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .card {
+    background: #1f1f2e;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card.glow:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 15px var(--cor-primaria);
+  }
+
+  .card.project.glow1 {
+    cursor: pointer;
+  }
+  
+  /* Formulário */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button {
+    background: var(--cor-primaria);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #151525;
+    font-size: 0.9rem;
+  }
+  
+  /* Fade-in */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px; left: 0; right: 0;
+      background: #151525;
+      padding: 1rem;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+
+  body {
+    background: linear-gradient(135deg, #2d2f48, #1b1c30, #3b3f72);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+  }
+  
+  .card, header, nav, form, aside {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  .btn {
+    background: rgba(108, 99, 255, 0.8);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  

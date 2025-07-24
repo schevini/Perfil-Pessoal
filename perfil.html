@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Vinícios S de Miranda</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Fundo de partículas -->
+  <div id="particles-js"></div>
+
+  <header class="hero">
+    <div class="header-content">
+      <img src="./img/ViníciosS.jpeg" alt="Minha Foto" class="foto-perfil">
+      <h1>Vinícios Schemberg de Miranda</h1>
+      <p class="slogan" id="typewriter"></p>
+      <a href="#contato" class="btn neon-btn">Entre em Contato</a>
+    </div>
+  </header>
+
+  <nav>
+    <div class="logo">Sempre buscando resultado!</div>
+    <ul class="menu">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <main>
+    <section id="sobre" class="fade-in">
+      <h2>Sobre mim</h2>
+      <p>Sou um desenvolvedor apaixonado por tecnologia, com foco em soluções modernas e responsivas. Minha missão é criar experiências digitais inovadoras que geram impacto real.</p>
+      <p>Tenho como objetivo crescer profissionalmente, sempre com garra, dedicação, organização, foco, trabalho em equipe e grande disposição para aprender. Busco aplicar e aprimorar meus conhecimentos, colaborando no desenvolvimento de projetos e contribuindo para os resultados da empresa.</p>
+    </section>
+
+    <section id="habilidades" class="fade-in">
+      <h2>Habilidades</h2>
+      <div class="grid">
+        <div class="card glow">HTML5 & CSS</div>
+        <div class="card glow">JavaScript (ES6+)</div>
+        <div class="card glow">React & Node.js</div>
+        <div class="card glow">APIs RESTful</div>
+        <div class="card glow">Banco de Dados MySQL</div>
+        <div class="card glow">Java & Spring Boot</div>
+        <div class="card glow">Python</div>
+        <div class="card glow">Git & CI/CD</div>
+      </div>
+    </section>
+
+    <section id="projetos" class="fade-in">
+      <h2>Projetos</h2>
+      <div class="grid">
+        <div class="card project glow1" onclick="window.open('https://primeiro-site-ecru.vercel.app/', '_blacnk')">
+          <h3>Réplica de Site</h3>
+          <p>Site EldenRing</p>
+        </div>
+        <div class="card project glow">
+          <h3>Em desenvolvimento</h3>
+          <p>Aguardem</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="fade-in">
+      <h2>Contato</h2>
+      <form>
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <textarea placeholder="Sua mensagem" rows="4"></textarea>
+        <button type="submit" class="btn neon-btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vinícios Schemberg de Miranda. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    // Partículas
+    particlesJS.load('particles-js', 'particles.json', function() {
+      console.log('Particles.js carregado');
+    });
+
+    // Menu responsivo
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('active');
+    }
+
+    // Typewriter
+    const text = "Desenvolvedor Full Stack | Criando Experiências Digitais";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+    window.onload = typeWriter;
+
+    // Fade-in ao rolar
+    const elements = document.querySelectorAll('.fade-in');
+    window.addEventListener('scroll', () => {
+      elements.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+          el.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
